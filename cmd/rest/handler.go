@@ -63,7 +63,7 @@ func (h *Handler) UploadFile(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		f, err = os.Create("./storage/" + tipe + "/" + header.Filename)
+		f, err = os.Create("./storage/" + tipe + "/" + fileName)
 		if err != nil {
 			helper.WriteResponse(w, err, nil)
 			return

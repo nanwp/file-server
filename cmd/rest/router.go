@@ -34,9 +34,9 @@ func Run(ctx context.Context, cfg *config.Config, h handler) error {
 
 	c := cors.New(cors.Options{
 		AllowedOrigins:     []string{"*"},
-		AllowedMethods:     []string{"GET", "POST"},
-		AllowedHeaders:     []string{"Authorization", "Content-Type", "Accept", "Content-Length", "Accept-Encoding"},
-		MaxAge:             120,
+		AllowedMethods:     []string{"POST", "GET", "PUT", "DELETE", "HEAD", "OPTIONS"},
+		AllowedHeaders:     []string{"Accept", "Content-Type", "Content-Length", "Accept-Encoding", "X-CSRF-Token", "Authorization", "Mode"},
+		MaxAge:             60, // 1 minutes
 		AllowCredentials:   true,
 		OptionsPassthrough: false,
 		Debug:              false,
